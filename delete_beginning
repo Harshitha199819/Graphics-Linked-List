@@ -1,0 +1,17 @@
+NODE delete_front(NODE first)
+{
+ NODE temp;
+ if (first == NULL)
+ {
+  printf("list is empty cannot delete\n");
+  disp();
+  count++;
+  succ = 0;
+  return first;
+ }
+ temp = first;
+ temp = temp->link;
+ printf("item deleted=%d \n", first->info);
+ free(first);
+ return temp;
+}
