@@ -1,0 +1,41 @@
+NODE delete_specified(NODE first)
+{
+ NODE prev, cur;
+ if (first == NULL)
+ {
+  printf("list is empty\n");
+  disp();
+  count++;
+  succ = 0;
+  return NULL;
+ }
+ printf("enter the key");
+ scanf_s("%d", &key);
+ if (key == first->info)
+ {
+  cur = first;
+  first = first->link;
+  free(cur);
+  return first;
+ }
+ prev = NULL;
+ cur = first;
+ while (cur != NULL)
+ {
+  if (key == cur->info)
+   break;
+  prev = cur;
+  cur = cur->link;
+ }
+ if (cur == NULL)
+ {
+  printf("search is unsuccessful\n");
+  count++;
+  succ1 = 0;
+  succ = 0;
+  return first;
+ }
+ prev->link = cur->link;
+ free(cur);
+ return first;
+}
