@@ -1,0 +1,8 @@
+NODE insert_front(int item, NODE first)
+{
+ NODE temp;
+ temp = getnode();
+ temp->info = item;
+ temp->link = first;
+ return temp;
+}
