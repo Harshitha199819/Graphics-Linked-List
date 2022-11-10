@@ -1,0 +1,62 @@
+void sll_menu(int choice)
+{
+ switch (choice)
+ {
+ case 1:
+  printf("enter the item to be inserted");
+  scanf_s("%d", &item);
+  first = insert_front(item, first);
+  count++;
+  display();
+  drawstring(200.0, 130.0, "NEW NODE INSERTED", 2);
+  break;
+ case 2:
+  printf("enter the item to be inserted");
+  scanf_s("%d", &item);
+  first = insert_rear(item, first);
+  count++;
+  display();
+  drawstring(200.0, 130.0, "NEW NODE INSERTED", 2);
+  break;
+ case 3:
+  printf("enter the item to be inserted : ");
+  scanf_s("%d", &item);
+  ins_succ = 1;
+  first = insert_specified(item, first);
+  count++;
+  display();
+  if (!ins_succ)
+   drawstring(200.0, 130.0, "KEY NODE DOESN'T EXIST", 2);
+  else
+   drawstring(200.0, 130.0, "NEW NODE INSERTED", 2);
+  break;
+ case 4:
+  succ = 1;
+  first = delete_front(first);
+  count--;
+  display();
+  if (succ)
+   drawstring(200.0, 130.0, "NODE DELETED", 2);
+  break;
+ case 5:
+  succ = 1;
+  first = delete_rear(first);
+  count--;
+  display();
+  if (succ)
+   drawstring(200.0, 130.0, "NODE DELETED", 2);
+  break;
+ case 6:
+  succ = succ1 = 1;
+  first = delete_specified(first);
+  count--;
+  display();
+  if (succ)
+   drawstring(200.0, 130.0, "NODE DELETED", 2);
+  if (!succ1)
+   drawstring(200.0, 130.0, "KEY NODE DOESN'T EXIST", 2);
+  break;
+ case 7:
+  exit(0);
+ }
+}
