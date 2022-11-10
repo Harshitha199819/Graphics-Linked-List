@@ -1,0 +1,35 @@
+NODE insert_specified(int item, NODE first)
+{
+ NODE next, cur, temp;
+ temp = getnode();
+ temp->info = item;
+ if (first == NULL)
+ {
+  printf("list is empty.inserting node at front end...\n");
+  temp->link = NULL;
+  first = temp;
+  return first;
+ }
+ printf("Enter the key : ");
+ scanf_s("%d", &key);
+ cur = first;
+ while (cur != NULL)
+ {
+  next = cur->link;
+  if (cur->info == key)
+  {
+   printf("key found\n");
+   cur->link = temp;
+   temp->link = next;
+   return first;
+  }
+  cur = cur->link;
+ }
+ if (cur == NULL)
+ {
+  printf("search unsuccessful\n");
+  count--;
+  ins_succ = 0;
+ }
+ return first;
+}
