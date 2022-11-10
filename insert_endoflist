@@ -1,0 +1,17 @@
+NODE insert_rear(int item, NODE first)
+{
+ NODE temp;
+ NODE cur;
+ temp = getnode();
+ temp->info = item;
+ temp->link = NULL;
+ if (first == NULL)
+  return temp;
+ cur = first;
+ while (cur->link != NULL)
+ {
+  cur = cur->link;
+ }
+ cur->link = temp;
+ return first;
+}
